@@ -10,11 +10,24 @@ function setCart(c) {
 }
 
 function addToCart(item) {
- // write your code here
+ function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+var itemName = item;
+var itemPrice = getRandomInt(1, 100);
+cart.push({[itemName]: itemPrice});
+console.log(`${itemName} has been added to your cart.`);
+return cart;
 }
 
 function viewCart() {
-  // write your code here
+  if (cart[0] === undefined){
+    return 'Your shopping cart is empty.';
+  } else {
+    for (var i = 0, i < cart.length; i++) {
+      
+    }
+  }
 }
 
 function total() {
