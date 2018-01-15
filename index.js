@@ -21,30 +21,35 @@ return cart;
 }
 
 function viewCart() {
-  if (cart.length === 0) {
-    console.log('Your shopping cart is empty.');
-  } else if(cart.length === 1) {
     var i = 0;
     var keys = Object.keys(cart[i]) 
     var cartItem = Object.keys(cart[i]);
-    var itemPrice = Object.values(cart[i]);
+    var itemPrice = cart[i][Object.keys(cart[i])];
     var message = `In your cart, you have ${cartItem} at $${itemPrice}`;
+  if(cart.length === 1) {
     console.log(`${message}.`);
   } else if (cart.length === 2) {
+    var itemAndPrice = [];
     for (i = 0; i < cart.length; i++) {
-      var newMessage = `${message} and ${cartItem} at $${itemPrice}`;
+      itemAndPrice.push(`${Object.keys(cart[i])} at $${cart[i][Object.keys(cart[i])]}`);
     }
-    console.log(`${newMessage}.`)
-  }
+    console.log(`In your cart, you have ${itemAndPrice.join(' and ')}`)
+  } else {
+    console.log('Your shopping cart is empty.');
+  } 
 }
 
 
 function total() {
-  
+  var itemPrice = cart[i][Object.keys(cart[i])];
+  for (var i = 0; i < cart.length; i++){
+    itemPrice += itemPrice;
+  }
+  console.log(itemPrice);
 }
 
 function removeFromCart(item) {
-  // write your code here
+  //if (cart)
 }
 
 function placeOrder(cardNumber) {
