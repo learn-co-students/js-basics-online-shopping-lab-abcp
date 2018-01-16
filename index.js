@@ -18,21 +18,22 @@ function addToCart(item) {
 }
 
 function viewCart() {
-  var inCart = "In your cart, you have ";
   if (cart.length > 0) {
-    
-    var soloKeyA = Object.keys(cart[0]);
-    var soloKeyB = soloKeyA[0];
+    var inCart = "In your cart, you have ";
     
     if (cart.length === 1) {
+      var soloKeyA = Object.keys(cart[0]);  //returns an array of the key value
+      var soloKeyB = soloKeyA[0];           //sets the var to the key value
+      
       inCart += `${soloKeyB} at $${cart[0][soloKeyB]}.`;
       console.log(inCart);
+      return;
     }
     
     for (let i = 0; i < cart.length; ++i) {
       
-      var keyA = Object.keys(cart[i]);
-      var keyB = keyA[0];
+      var keyA = Object.keys(cart[i]);  //returns an array of the key value
+      var keyB = keyA[0];               //sets the var to the key value
       
       if (i === cart.length-1) {
         inCart += `and ${keyB} at $${cart[i][keyB]}.`;
@@ -46,8 +47,10 @@ function viewCart() {
       
     }
     console.log(inCart);
+    return;
   } else {
     console.log('Your shopping cart is empty.');
+    return;
   }
 }
 
