@@ -41,12 +41,16 @@ function viewCart() {
 
 
 function total() {
-  var itemPrice = cart[i][Object.keys(cart[i])];
-  for (var i = 0; i < cart.length; i++){
-    itemPrice += itemPrice;
-  }
-  console.log(itemPrice);
-}
+	var newerCart = [];
+	function add(a,b) {
+		return a + b;
+	}
+	for (var i = 0; i < cart.length; i++) {
+		newerCart.push(cart[i][Object.keys(cart[i])]);
+		var sum = newerCart.reduce(add);
+	} 
+	return sum;
+}	
 
 function removeFromCart(item) {
   //if (cart)
