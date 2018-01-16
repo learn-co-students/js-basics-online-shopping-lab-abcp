@@ -22,23 +22,24 @@ return cart;
 
 function viewCart() {
 	var itemsInCart = [];
-	var pricesOfItems = [];
 	var i = 0;
-	if (cart.length === 0) {
+	for (i = 0; i < cart.length; i++) {
+			itemsInCart.push([Object.keys(cart[i]), cart[i][Object.keys(cart[i])]]);
+		}
+	if (cart.length === 0){
 		console.log('Your shopping cart is empty.');
 	} else if (cart.length === 1) {
-		for (i = 0; i < cart.length; i++) {
-			itemsInCart.push(Object.keys(cart[i]));
-			pricesOfItems.push(cart[i][Object.keys(cart[i])]);
-		}
-		console.log(`In your cart, you have ${itemsInCart[0]} at $${pricesOfItems[0]}.`);
+		console.log(`In your cart, you have ${itemsInCart[0][0]} at $${itemsInCart[0][1]}.`);
 	} else if (cart.length === 2) {
+		console.log(`In your cart, you have ${itemsInCart[0][0]} at $${itemsInCart[0][1]} and ${itemsInCart[1][0]} at $${itemsInCart[1][1]}.`);
+	} /* else if (cart.length >= 3) {
 		for (i = 0; i < cart.length; i++) {
-			itemsInCart.push(Object.keys(cart[i]));
-			pricesOfItems.push(cart[i][Object.keys(cart[i])]);
+			var innerCart = itemsInCart[i].join(' at $');	
+		} var outerCart =  {
+			var innerCart = itemsInCart[i].join(' at $');
 		}
-		console.log(`In your cart, you have ${itemsInCart[0]} at $${pricesOfItems[0]} and ${itemsInCart[1]} at $${pricesOfItems[1]}.`);
-	}
+		console.log(outerCart);
+	} */
 }
 
 
@@ -55,7 +56,11 @@ function total() {
 }	
 
 function removeFromCart(item) {
-  //if (cart)
+  if (cart.item === undefined) {
+    console.log('That item is not in your cart.');
+  } else if (cart.item) {
+    cart.
+  }
 }
 
 function placeOrder(cardNumber) {
