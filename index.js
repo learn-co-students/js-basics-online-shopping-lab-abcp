@@ -21,24 +21,24 @@ function viewCart() {
   if (cart.length > 0) {
     var inCart = "In your cart, you have ";
     
-    if (cart.length === 1) {
+    if (cart.length === 1) {                //used when the cart is only 1 item
       var soloKeyA = Object.keys(cart[0]);  //returns an array of the key value
       var soloKeyB = soloKeyA[0];           //sets the var to the key value
       
-      inCart += `${soloKeyB} at $${cart[0][soloKeyB]}.`;
+      inCart += `${soloKeyB} at $${cart[0][soloKeyB]}.`; //gets the value of the key at cart[i]
       console.log(inCart);
       return;
     }
     
-    for (let i = 0; i < cart.length; ++i) {
+    for (let i = 0; i < cart.length; ++i) { //used when the cart is 2+ items
       
-      var keyA = Object.keys(cart[i]);  //returns an array of the key value
-      var keyB = keyA[0];               //sets the var to the key value
+      var keyA = Object.keys(cart[i]);      //returns an array of the key value
+      var keyB = keyA[0];                   //sets the var to the key value
       
-      if (i === cart.length-1) {
+      if (i === cart.length-1) {            //checks when we reached the last item
         inCart += `and ${keyB} at $${cart[i][keyB]}.`;
       } else {
-        if (cart.length === 2) {
+        if (cart.length === 2) {            //used when the cart is only 2 items
           inCart += `${keyB} at $${cart[i][keyB]} `;
         } else {
           inCart += `${keyB} at $${cart[i][keyB]}, `;
