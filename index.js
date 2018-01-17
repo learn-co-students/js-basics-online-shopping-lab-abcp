@@ -57,12 +57,9 @@ function total() {
 }	
 
 function removeFromCart(item) {
-  for (var i = 0; i < cart.length; i++) {
-    var itemPresent = cart[i].hasOwnProperty(item);
-  } if (itemPresent === false){
-    console.log(`That item is not in your cart.`);
-  } 
-} 
+ 
+}
+
 
 function placeOrder(cardNumber) {
   if (cardNumber === undefined) {
