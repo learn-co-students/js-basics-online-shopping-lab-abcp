@@ -54,15 +54,19 @@ function total() {
 	} 
 	return sum;
 }	
-
+/*
 function removeFromCart(item) {
-  if (cart.item === undefined) {
-    console.log('That item is not in your cart.');
-  } else if (cart.item) {
-    cart.
+  for (var i = 0; i < cart.length; i++) {
+    var cartNew = {Object.keys(cart[i]): cart[i][Object.keys(cart[i])]};
   }
-}
+  console.log(cartNew);
+} */
 
 function placeOrder(cardNumber) {
-  // write your code here
+  if (cardNumber === undefined) {
+    console.log(`Sorry, we don't have a credit card on file for you.`)
+  } else {
+    console.log(`Your total cost is $${total()}, which will be charged to the card ${cardNumber}.`)
+    cart.splice(0);
+  }
 }
