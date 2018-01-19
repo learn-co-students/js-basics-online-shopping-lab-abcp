@@ -23,6 +23,9 @@ function addToCart(itemName) {
   return cart
 }
 
+//TO THINK ABOUT: 
+//1. create itemAtPrice variable set to ${Object.keys(cart[n])} at $${cart[n][Object.keys(cart[n])]}?
+//2. create a loop that makes the sentence length change, (invoking itemAtPrice) based on cart length?
 function viewCart() {
   if (cart.length === 0) {
     console.log("Your shopping cart is empty.")
