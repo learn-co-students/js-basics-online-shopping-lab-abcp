@@ -27,13 +27,15 @@ function addToCart(itemName) {
 //1. create itemAtPrice variable set to ${Object.keys(cart[n])} at $${cart[n][Object.keys(cart[n])]}?
 //2. create a loop that makes the sentence length change, (invoking itemAtPrice) based on cart length?
 function viewCart() {
+  var n = 0
+  var itemsInCart = []
   if (cart.length === 0) {
     console.log("Your shopping cart is empty.")
   } else if (cart.length === 1) {
-    //fix below to print out correctly following the syntax
+    
     console.log(`In your cart, you have ${Object.keys(cart[0])} at $${cart[0][Object.keys(cart[0])]}.`)
   }else if (cart.length === 2) {
-    //fix below to print out correctly following the syntax
+    
     console.log(`In your cart, you have ${Object.keys(cart[0])} at $${cart[0][Object.keys(cart[0])]} and ${Object.keys(cart[1])} at $${cart[1][Object.keys(cart[1])]}.`)
   } else {
     //fix below to print out correctly following the syntax
@@ -42,19 +44,26 @@ function viewCart() {
 }
     
 
-  /*this will log prices that are in the cart array:
-  console.log(cart[0][itemName]*/
 
 
-/*if (katzDeliLine.length === 0) {
-    return "The line is currently empty."
+/*function currentLine() {
+  var n = 0
+  var itemsInCart = []
+   if (cart.length === 0) {
+    console.log("Your shopping cart is empty.")
+    ...
+    
   } else {
-    for (var i = 0; i < katzDeliLine.length; i++) {
+    for (var i = 2; i < cart.length; i++) {
      n++;
-     inLine.push(" " + (n) + ". " + katzDeliLine[i])
+      itemsInCart.push(` ${n}. ${cart[i]}`)
   }
-    return "The line is currently:" + inLine
-  }*/
+    console.log(`In your cart, you have 
+    ${Object.keys(cart[n])} at $${cart[n][Object.keys(cart[n])]}, 
+    ${Object.keys(cart[n])} at $${cart[n][Object.keys(cart[n])]}, 
+    and ${Object.keys(cart[n])} at $${cart[n][Object.keys(cart[n])]}.`)
+  }
+}*/
 
 function total() {
   // write your code here
