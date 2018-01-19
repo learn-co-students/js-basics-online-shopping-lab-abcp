@@ -24,16 +24,14 @@ function addToCart(itemName) {
 }
 
 function viewCart() {
-  //itemPrice is the value of an object in the cart array
-  var itemPrice = (cart[0][itemName])
   if (cart.length === 0) {
     console.log("Your shopping cart is empty.")
   } else if (cart.length === 1) {
     //fix below to print out correctly following the syntax
-    console.log(`In your cart, you have ${itemName} at $${itemPrice}.`)
+    console.log(`In your cart, you have ${Object.keys(cart[0])} at $${cart[0][Object.keys(cart[0])]}.`)
   }else if (cart.length === 2) {
     //fix below to print out correctly following the syntax
-    console.log(`In your cart, you have bananas at $17 and pancake batter at $5.`)
+    console.log(`In your cart, you have ${Object.keys(cart[0])} at $${cart[0][Object.keys(cart[0])]} and ${Object.keys(cart[1])} at $${cart[1][Object.keys(cart[1])]}.`)
   } else {
     //fix below to print out correctly following the syntax
     console.log(`In your cart, you have bananas at $17, pancake batter at $5, and eggs at $49.`)
