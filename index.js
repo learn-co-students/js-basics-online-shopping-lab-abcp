@@ -24,13 +24,21 @@ function viewCart() {
   console.log(`Your shopping cart is empty.`)
   else {
   var x =`In your cart, you have `
-  if(cart.length>1){
-  for( var i = 0; i < cart.length - 1; i++)
-    x += `${Object.keys(cart)[i]} at ${cart[Object.keys(cart)[i]]}`
-      x += ` and ${Object.keys(cart)[cart.length - 1]} at ${cart[Object.keys(cart)[cart.length - 1]]}`}
-      else {
+  if(cart.length > 1)
+  {
+    if(cart.length >= 3)
+    {
+    for( var i = 0; i < cart.length - 1; i++)
+          x += `${Object.keys(cart)[i]} at ${cart[Object.keys(cart)[i]]}`
+    x += ` and ${Object.keys(cart)[cart.length - 1]} at ${cart[Object.keys(cart)[cart.length - 1]]}`
+  }
+    else if(cart.length ===1)
        x += `${Object.keys(cart)[i]} at ${cart[Object.keys(cart)[i]]}`
+       else if(cart.length === 2){
+        x += `${Object.keys(cart)[i]} at ${cart[Object.keys(cart)[i]]}`
+          x += ` and ${Object.keys(cart)[cart.length - 1]} at ${cart[Object.keys(cart)[cart.length - 1]]}`
       }
+    }
   console.log(x)}
 }
 
@@ -46,13 +54,11 @@ function total() {
 
 function removeFromCart(item) {
   // write your code here
- for(var i = 0; i < cart.length; i++)
-    if(cart[i].key === item)
-      {
-        cart.splice(i,1)
-        return cart
+  const index = cart.indexOf(item);
+  if (index !== -1) {
+        cart.splice(index, 1);
       }
-
+  else
   console.log(`That item is not in your cart.`)
   return cart
 }
