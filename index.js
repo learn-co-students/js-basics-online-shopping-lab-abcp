@@ -24,39 +24,55 @@ function viewCart() {
   console.log(`Your shopping cart is empty.`)
   else {
   var x =`In your cart, you have `
-  if(cart.length>1)
+  if(cart.length>1){
   for( var i = 0; i < cart.length - 1; i++)
     x += `${Object.keys(cart)[i]} at ${cart[Object.keys(cart)[i]]}`
-      x += ` and ${Object.keys(cart)[cart.length - 1]} at ${cart[Object.keys(cart)[cart.length - 1]]}`
+      x += ` and ${Object.keys(cart)[cart.length - 1]} at ${cart[Object.keys(cart)[cart.length - 1]]}`}
+      else {
+       x += `${Object.keys(cart)[i]} at ${cart[Object.keys(cart)[i]]}`
+      }
   console.log(x)}
 }
 
 function total() {
   // write your code here
   const sum =  (a, b) => a + b;
-  var values = Object.values(cart)
+  var values = []
+  for( let key of Object.keys(cart)) {
+     values.push(cart[key]);
+   }
   return values.reduce(sum)
 }
 
 function removeFromCart(item) {
   // write your code here
-  try{
-  var i = cart.getIndexOf(item)
-   cart.splice(i, 1);
- }
- catch(err){
-   console.log(`That item is not in your cart.`)
- }
- finally{return cart}
+ for(var i = 0; i < cart.length; i++)
+    if(cart[i].key === item)
+      {
+        cart.splice(i,1)
+        return cart
+      }
+
+  console.log(`That item is not in your cart.`)
+  return cart
 }
 
 
 function placeOrder(cardNumber) {
   // write your code here
-  if(typeof cardNumber !== 'number')
-  return `Sorry, we don'\t have a credit card on file for you.`
-  else {
-    return `Your total cost is ${total()}, which will be charged to the card ${cardNumber}.`
-  }
+if(typeof cardNumber === 'number'|| cardNumber > 0)
+  {
+   var x = total()
+   cart.length = 0
+   return `Your total cost is ${x}, which will be charged to the card ${cardNumber}.`
+ }
+  else
+  { cart.length = 0
+      return `Sorry, we don't have a credit card on file for you.`
+}
+}
 
+function placeOrder(){
+  cart.length = 0
+  return `Sorry, we don't have a credit card on file for you.`
 }
