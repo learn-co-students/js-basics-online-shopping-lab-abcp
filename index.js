@@ -46,9 +46,9 @@ function total() {
   // write your code here
   const sum =  (a, b) => a + b;
   var values = []
-  for( let key of Object.keys(cart)) {
-     values.push(cart[key]);
-   }
+  Object.keys(cart).forEach(function (key) {
+      values.push(cart[key])
+  });
   return values.reduce(sum)
 }
 
