@@ -24,6 +24,7 @@ function viewCart() {
   console.log(`Your shopping cart is empty.`)
   else {
   var x =`In your cart, you have `
+  if(cart.length>1)
   for( var i = 0; i < cart.length - 1; i++)
     x += `${Object.keys(cart)[i]} at ${cart[Object.keys(cart)[i]]}`
       x += ` and ${Object.keys(cart)[cart.length - 1]} at ${cart[Object.keys(cart)[cart.length - 1]]}`
@@ -43,8 +44,10 @@ function removeFromCart(item) {
   var i = cart.getIndexOf(item)
    cart.splice(i, 1);
  }
- catch(err){console.log(`That item is not in your cart.`)}
- return cart
+ catch(err){
+   console.log(`That item is not in your cart.`)
+ }
+ finally{return cart}
 }
 
 
