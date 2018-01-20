@@ -25,24 +25,22 @@ function viewCart() {
 	var i = 0;
 	var message = `In your cart, you have`;
 	for (i = 0; i < cart.length; i++) {
-			itemsInCart.push([Object.keys(cart[i]), cart[i][Object.keys(cart[i])]]);
+			itemsInCart.push([`${Object.keys(cart[i])} at $${cart[i][Object.keys(cart[i])]}`]);
 		}
 	if (cart.length === 0){
-		console.log('Your shopping cart is empty.');
+		  console.log('Your shopping cart is empty.');
 	} else if (cart.length === 1) {
-		console.log(`${message} ${itemsInCart[0][0]} at $${itemsInCart[0][1]}.`);
+	    for (i = 0; i < cart.length; i++) {
+	    	console.log(`${message} ${itemsInCart[i]}.`);
+	  }
 	} else if (cart.length === 2) {
-		console.log(`${message} ${itemsInCart[0][0]} at $${itemsInCart[0][1]} and ${itemsInCart[1][0]} at $${itemsInCart[1][1]}.`);
-	}/* else {
-		for (i = 0; i < cart.length; i++) {
-			var innerCart = itemsInCart[i].join(' at $');	
-		} var outerCart =  {
-			var innerCart = itemsInCart[i].join(' at $');
-		}
-		console.log(outerCart);
-	} */
+	    console.log(`${message} ${itemsInCart.join(' and ')}.`);
+	} else {
+	    var allButLastItem = itemsInCart.slice(0, itemsInCart.length - 1)
+	    var lastItem = itemsInCart.slice(itemsInCart.length - 1)
+	    console.log(`${message} ${allButLastItem.join(', ')}, and ${lastItem}.`);
+	}
 }
-
 
 function total() {
 	var newerCart = [];
