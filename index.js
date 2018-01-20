@@ -12,7 +12,7 @@ function setCart(c) {
 function addToCart(item) {
  // write your code here
  var obj = {}
- obj[item] = Math.random()*1000/10
+ obj[item] = Math.floor(Math.random()*100)
  cart.push(obj)
  console.log(`${item} has been added to your cart.`)
  return cart
@@ -50,7 +50,7 @@ function removeFromCart(item) {
 
 function placeOrder(cardNumber) {
   // write your code here
-  if(type(cardNumber) !== number)
+  if(typeof cardNumber !== 'number')
   return `Sorry, we don'\t have a credit card on file for you.`
   else {
     return `Your total cost is ${total()}, which will be charged to the card ${cardNumber}.`
