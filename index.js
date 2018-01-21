@@ -1,5 +1,4 @@
-var cart = [];
-
+var cart = [] 
 function getCart() {
  return cart;
 }
@@ -28,10 +27,8 @@ function viewCart() {
   if (cart.length === 0) {
     console.log("Your shopping cart is empty.");
   } else if (cart.length === 1) {
-    
     console.log(`In your cart, you have ${Object.keys(cart[0])} at $${cart[0][Object.keys(cart[0])]}.`);
   }else if (cart.length === 2) {
-    
     console.log(`In your cart, you have ${Object.keys(cart[0])} at $${cart[0][Object.keys(cart[0])]} and ${Object.keys(cart[1])} at $${cart[1][Object.keys(cart[1])]}.`);
   } else {
     for (var i = 0; i < (cart.length - 1); i++) {
@@ -40,14 +37,15 @@ function viewCart() {
  	console.log(`In your cart, you have${firstItemsInCart}, and ${Object.keys(cart[i])} at $${cart[i][Object.keys(cart[i])]}.`);
   }
 }
-
+//  iterates through the cart array, adds up the price of all items in the cart, and returns the current total value of the items in the cart
 function total() {
-  var pricesOfItems = [];
-  //  iterates through the cart array, adds up the price of all items in the cart, and returns the current total value of the items in the cart
+  var pricesOfItems = 0;
   for (var n = 0; n < cart.length; n++) {
-    pricesOfItems.push(+(cart[i][Object.keys(cart[i])]))
-    //below is just for testing the above. not what i want to happen in the final version of the function
-}return pricesOfItems
+    var itemPrice = cart[n][Object.keys(cart[n])];
+    var newTotal = pricesOfItems + itemPrice;
+    pricesOfItems = newTotal;
+  }
+return pricesOfItems
 }
 
 
