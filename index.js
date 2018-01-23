@@ -76,7 +76,7 @@ function removeFromCart(item) {
 
   for (i = 0; i < cart.length; i++) {
     cartIndex = cart[i];
-    if (cartIndex.hasOwnProperty(itemToRemove)) {
+    if (cartIndex.hasOwnProperty(item)) {
       itemToSplice = i;
     }
   }
@@ -91,5 +91,12 @@ function removeFromCart(item) {
 }
 
 function placeOrder(cardNumber) {
-  // write your code here
+  var totalCost = total();
+  
+  if (!cardNumber) {
+    console.log("Sorry, we don't have a credit card on file for you.");
+  } else {
+    console.log("Your total cost is $" + totalCost +", which will be charged to the card " + cardNumber + ".");
+    cart = [];
+  }
 }
