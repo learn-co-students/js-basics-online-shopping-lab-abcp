@@ -31,6 +31,14 @@ function viewCart() {
       currCart = currCart + item + " at $" + cart[0][item] + ".";
       console.log(currCart); 
     }
+  } else if (cart.length == 2) {
+    for (item in cart[0]) {
+      currCart = currCart + item + " at $" + cart[0][item];
+    }
+    for (item in cart[1]) {
+      currCart = currCart + "and " + item + " at $" + cart[1][item];
+    }
+    console.log(currCart); 
   } else {
     for (i = 0; i < cart.length; i++) {
       for (item in cart[i]) {
