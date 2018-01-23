@@ -37,9 +37,9 @@ function viewCart() {
         if (i === 0) {
           currCart = currCart + item + " at $" + cart[i][item];
         } else if (i === cart.length - 1) {
-          currCart = currCart + " and " + item + " at $" + cart[i][item] + ".";
+          currCart = currCart + ", and " + item + " at $" + cart[i][item] + ".";
         } else {
-          currCart = currCart + ", " + item + " at $" + cart[i][item] + ",";
+          currCart = currCart + ", " + item + " at $" + cart[i][item];
         }
       }
     }
