@@ -36,7 +36,7 @@ function viewCart() {
       currCart = currCart + item + " at $" + cart[0][item];
     }
     for (item in cart[1]) {
-      currCart = currCart + "and " + item + " at $" + cart[1][item];
+      currCart = currCart + " and " + item + " at $" + cart[1][item] + ".";
     }
     console.log(currCart); 
   } else {
