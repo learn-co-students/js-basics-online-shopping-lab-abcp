@@ -20,7 +20,27 @@ function addToCart(item) {
 }
 
 function viewCart() {
-  // write your code here
+  var i;
+  var item;
+  var currCart = ["In your cart, you have "]
+  
+  if (cart.length === 0) {
+    return "Your shopping cart is empty."
+  } else {
+    for (i = 0; i < cart.length; i++) {
+      for (item in cart[i]) {
+        if (i === 0) {
+          currCart = currCart + item + " at $" + cart[i][item];
+        } else if (i === cart.length - 1) {
+          currCart = currCart + " and " + item + " at $" + cart[i][item] + ".";
+        } else {
+          currCart = currCart + ", " + item + " at $" + cart[i][item] + ",";
+        }
+      }
+    }
+  }
+
+  return currCart;
 }
 
 function total() {
