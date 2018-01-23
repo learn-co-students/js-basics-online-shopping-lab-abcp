@@ -25,7 +25,12 @@ function viewCart() {
   var currCart = ["In your cart, you have "]
   
   if (cart.length === 0) {
-    return "Your shopping cart is empty."
+    console.log("Your shopping cart is empty.");
+  } else if (cart.length === 1) {
+    for (item in cart[0]) {
+      currCart = currCart + item + " at $" + cart[0][item] + ".";
+      console.log(currCart); 
+    }
   } else {
     for (i = 0; i < cart.length; i++) {
       for (item in cart[i]) {
@@ -38,9 +43,8 @@ function viewCart() {
         }
       }
     }
+    console.log(currCart);
   }
-
-  return currCart;
 }
 
 function total() {
