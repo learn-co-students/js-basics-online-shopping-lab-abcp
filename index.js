@@ -70,7 +70,24 @@ function total() {
 }
 
 function removeFromCart(item) {
-  // write your code here
+  var i;
+  var cartIndex;
+  var itemToSplice = false;
+
+  for (i = 0; i < cart.length; i++) {
+    cartIndex = cart[i];
+    if (cartIndex.hasOwnProperty(itemToRemove)) {
+      itemToSplice = i;
+    }
+  }
+
+  if (itemToSplice === false) {
+    console.log("That item is not in your cart.");
+    return cart;
+  } else {
+      cart.splice(itemToSplice,1);
+      return cart;
+  }
 }
 
 function placeOrder(cardNumber) {
