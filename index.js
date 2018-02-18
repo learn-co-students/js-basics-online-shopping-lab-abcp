@@ -50,7 +50,6 @@ function viewCart() {
 
 
 function total() {
-  // write your code here
   let totalValue = 0 
   for (let i = 0, l = cart.length; i < l; i++) {
   for (let item in cart[i]) {
@@ -61,7 +60,6 @@ function total() {
 }
 
 function removeFromCart(item) {
-  // write your code here
       for (var i=0; i<cart.length; i++) {
       if (cart[i].hasOwnProperty(item)) {
      cart = [...cart.slice(0,i), ...cart.slice(i+1)];
@@ -73,7 +71,6 @@ function removeFromCart(item) {
 }
 
 function placeOrder(cardNumber) {
-  // write your code here
   if (!cardNumber) {
       console.log (`Sorry, we don't have a credit card on file for you.`)
     }
